@@ -1,0 +1,22 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: centos-6.5
+    run_list:
+    - recipe[yum]
+    - recipe[poc_benchmark::handler]
+suites:
+  - name: apache_php
+    run_list:
+      - recipe[poc_benchmark::apache_php]
+  - name: mysql_master
+    run_list:
+      - recipe[poc_benchmark::mysql_master]
+  - name: mysql_slave
+    run_list:
+      - recipe[poc_benchmark::mysql_slave]
