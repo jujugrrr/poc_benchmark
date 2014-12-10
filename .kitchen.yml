@@ -14,6 +14,18 @@ suites:
   - name: apache_php
     run_list:
       - recipe[poc_benchmark::apache_php]
+  - name: apache
+    run_list:
+      - recipe[poc_benchmark::apache]
+  - name: apache_3_vhosts
+    run_list:
+      - recipe[poc_benchmark::apache_3_vhosts]
+  - name: apache_mysql
+    run_list:
+      - recipe[poc_benchmark::apache_mysql]
+  - name: apache_mysql_3_vhosts
+    run_list:
+      - recipe[poc_benchmark::apache_mysql_3_vhosts]
   - name: mysql_master
     run_list:
       - recipe[poc_benchmark::mysql_master]
